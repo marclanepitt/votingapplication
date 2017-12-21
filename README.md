@@ -1,9 +1,19 @@
+# Website
+
+Link:
+
+* [Society Thinks](https://societythinks.herokuapp.com/templates/index.html)
+
+Login:
+
+* Username- marclane
+* password- qqqqq
+
 # Development
 
 Dependencies:
 
  * PHP
- * Python
  * UNC Login...Must be connected to vpn
 
 
