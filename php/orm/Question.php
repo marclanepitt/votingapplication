@@ -1,14 +1,13 @@
 <?php
 date_default_timezone_set('America/New_York');
-
 class Question
 {
 
   public static function connect() {
-    return new mysqli("classroom.cs.unc.edu", 
-          "marclane", 
-          "marc426", 
-		      "marclanedb");
+    return new mysqli("us-cdbr-iron-east-05.cleardb.net", 
+          "b7f1450e372951", 
+          "01e28eb8", 
+		      "heroku_5486668f57cfa79");
   }
 
   
