@@ -18,7 +18,7 @@ $( document ).ready(function() {
 		let username = e.target[0].value;
 		let password = e.target[1].value;
 		$.ajax({
-		  url: "http://localhost:8000/php/auth.php",
+		  url: "https://societythinks.herokuapp.com/php/auth.php",
 		  method: "GET",
 		  data: { username: username, password:password},
 		  dataType: "json"

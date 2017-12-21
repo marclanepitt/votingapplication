@@ -9,7 +9,7 @@ $( document ).ready(function() {
 
 	$("#overlay").css("display","block");
 	$.ajax({
-	  url: "http://localhost:8000/php/questions.php/search",
+	  url: "https://societythinks.herokuapp.com/php/questions.php/search",
 	  method: "GET",
 	  dataType: "json"
 	}).done(function(response) {
@@ -17,7 +17,7 @@ $( document ).ready(function() {
 			createQuestionCard(response[i][0], response[i]['question'], response[i]['username'], response[i]['pro_pic'], response[i]['country'], response[i]['asked_time'], response[i]['is_yours'], response[i]['already_responded']);
 			$("#Q"+response[i][0]+"-answers").click(function(){
 			  	$.ajax({
-					 url: "http://localhost:8000/php/questions.php/answers/"+response[i][0],
+					 url: "https://societythinks.herokuapp.com/php/questions.php/answers/"+response[i][0],
 						  method: "GET",
 						  dataType: "json"
 				}).done(function(response) {
@@ -53,7 +53,7 @@ $( document ).ready(function() {
 	function handleResponse(answer_id, question_id){
 		$("#overlay").css("display","block");
 		$.ajax({
-	  		url: "http://localhost:8000/php/response.php/"+question_id,
+	  		url: "https://societythinks.herokuapp.com/php/response.php/"+question_id,
 	  		method: "POST",
 	  		dataType: "json",
 	  		data: {user_id: $.cookie('uid'), answer_id: answer_id}
@@ -95,7 +95,7 @@ $( document ).ready(function() {
 	$("#search-bar").on('change input', function () {
 		$("#questions-overlay").css("display","block");
 		$.ajax({
-		  url: "http://localhost:8000/php/questions.php/search?string="+this.value,
+		  url: "https://societythinks.herokuapp.com/php/questions.php/search?string="+this.value,
 		  method: "GET",
 		  dataType: "json"
 		}).done(function(response) {
@@ -148,7 +148,7 @@ function scroll_handler(){
 			viewed_cards.push(card);
 			var question_id = parseInt(card.substring(1));
 			$.ajax({
-				url:"http://localhost:8000/php/questions.php/viewed",
+				url:"https://societythinks.herokuapp.com/php/questions.php/viewed",
 				method: "GET",
 				dataType:"json",
 				data: {question: question_id, viewed_by: $.cookie('uid')}
@@ -241,7 +241,7 @@ function generateAndShowResults(question_id,results_dialog){
 		maxAge:max_age
 	}
 	$.ajax({
-		url:"http://localhost:8000/php/response.php/"+question_id,
+		url:"https://societythinks.herokuapp.com/php/response.php/"+question_id,
 		method: "GET",
 		dataType:"json",
 		data: data

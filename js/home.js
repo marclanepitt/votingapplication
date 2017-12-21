@@ -24,7 +24,7 @@ $( document ).ready(function() {
 	});
 	$("#overlay").css("display","block");
 			$.ajax({
-			  url: "http://localhost:8000/php/questions.php/recent-activity/"+$.cookie("uid"),
+			  url: "https://societythinks.herokuapp.com/php/questions.php/recent-activity/"+$.cookie("uid"),
 			  method: "GET",
 			  dataType: "json"
 			}).done(function(response) {
@@ -77,7 +77,7 @@ $( document ).ready(function() {
 
 	$("#overlay").css("display","block");
 			$.ajax({
-			  url: "http://localhost:8000/php/user.php/user-data/"+$.cookie("uid"),
+			  url: "https://societythinks.herokuapp.com/php/user.php/user-data/"+$.cookie("uid"),
 			  method: "GET",
 			  dataType: "json"
 			}).done(function(response) {
@@ -99,7 +99,7 @@ $( document ).ready(function() {
 
 	$("#overlay").css("display","block");
 			$.ajax({
-			  url: "http://localhost:8000/php/questions.php/trending/",
+			  url: "https://societythinks.herokuapp.com/php/questions.php/trending/",
 			  method: "GET",
 			  dataType: "json"
 			}).done(function(response) {
@@ -160,7 +160,7 @@ $( document ).ready(function() {
 		var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 		var dateTime = date+' '+time;
 		$.ajax({
-			  url: "http://localhost:8000/php/questions.php/create?question="+question+"&answers="+answers+"&date="+dateTime,
+			  url: "https://societythinks.herokuapp.com/php/questions.php/create?question="+question+"&answers="+answers+"&date="+dateTime,
 			  method: "POST",
 			  dataType: "json"
 		}).done(function(response) {
@@ -213,7 +213,7 @@ function generateAndShowResults(question_id,results_dialog){
 		maxAge:max_age
 	}
 	$.ajax({
-		url:"http://localhost:8000/php/response.php/"+question_id,
+		url:"https://societythinks.herokuapp.com/php/response.php/"+question_id,
 		method: "GET",
 		dataType:"json",
 		data: data
